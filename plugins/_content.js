@@ -9,14 +9,14 @@ handler.all = async function (m) {
 global.key = ''
 
 // Cuentas
-const response = await fetch('https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/official_accounts.json')  
+const response = await fetch('https://raw.githubusercontent.com/JJoan02/JoanBot-TK/master/official_accounts.json')  
 const data = await response.json()
 let { accounts, channels, groups, collaboration, sponsors, others } = data.info
 
 global.yt = accounts.youTube
 global.yt2 = others.yt_vid
 global.ig = accounts.instagram
-global.md = accounts.gatabot_md
+global.md = accounts.joanbot_md
 global.fb = accounts.facebook
 global.tk = accounts.tiktok
 global.ths = accounts.threads
@@ -49,14 +49,14 @@ global.patrocinador3 = sponsors.vortexus
 global.patrocinador4 = sponsors.asif
 
 global.canales = [canal1, canal2, canal3, canal4].getRandom()
-global.welgata = [tk, ig, yt2, yt2, ig, md, ig, yt, paypal, yt2, yt2, ig, fb, tk, ths, asistencia].getRandom()
+global.weljoan = [tk, ig, yt2, yt2, ig, md, ig, yt, paypal, yt2, yt2, ig, fb, tk, ths, asistencia].getRandom()
 global.redesMenu = [canal1, canal2, canal3, canal4, soporteGB, grupo1, grupo2, grupo3, grupo4, grupo5, grupo6, md, ig, paypal, yt, asistencia, fb, tk].getRandom()
 global.accountsgb = [canal1, canal2, canal3, canal4, tk, ig, yt, paypal, fb, ths, md, asistencia].getRandom()
 
 var canalesInfo = [
 { link: canal1, id: "120363160031023229@newsletter", name: "INFINITY-WA 💫" },
 { link: canal2, id: "120363169294281316@newsletter", name: "GB - UPDATE ✨" },
-{ link: canal3, id: "120363203805910750@newsletter", name: "Tips sobre GataBot 🤩" } 
+{ link: canal3, id: "120363203805910750@newsletter", name: "Tips sobre JoanBot 🤩" } 
 ]
 var indiceAleatorio = Math.floor(Math.random() * canalesInfo.length)
 var channelRD = canalesInfo[indiceAleatorio]

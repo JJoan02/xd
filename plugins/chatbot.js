@@ -74,7 +74,7 @@ let teks = `${pickRandom([`no puedo esta contra las política del grupo.😸`, `
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})}*/
 
 if (/^reglas|normas|Reglas$/i.test(m.text) ) { //sin prefijo 
-conn.reply(m.chat, `*╭┅〘 ⚠️ 𝗥𝗲𝗴𝗹𝗮𝘀 𝗱𝗲 𝗝𝗼𝗮𝗻𝗕𝗼𝘁-𝗧𝗞 ⚠️ 〙*
+conn.reply(m.chat, `*╭┅〘 ⚠️ 𝐑𝐞𝐠𝐥𝐚𝐬 𝐝𝐞𝐥 𝐁𝐨𝐭 ⚠️ 〙*
 ➽❌ 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐝𝐨 𝐞𝐬𝐜𝐫𝐢𝐛𝐢𝐫 𝐚𝐥 𝐩𝐫𝐢𝐯𝐚𝐝𝐨 𝐚 𝐥𝐨𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 & 𝐁𝐨𝐭
 ➽❌ 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐝𝐨 𝐥𝐥𝐚𝐦𝐚𝐝𝐚 𝐠𝐫𝐮𝐩𝐚𝐥 𝐲 𝐚𝐥 𝐁𝐨𝐭
 ➽❌ 𝐍𝐨 𝐚𝐠𝐫𝐞𝐠𝐚𝐫 𝐚𝐥 𝐁𝐨𝐭
@@ -82,7 +82,7 @@ conn.reply(m.chat, `*╭┅〘 ⚠️ 𝗥𝗲𝗴𝗹𝗮𝘀 𝗱𝗲 𝗝𝗼
 *╰═┅ৡৢ͜͡✦═╡ 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨 ╞═┅ৡৢ͜͡✦═╯*`, fkontak, m)}
 
 if (/^Quiero un bot|como obtengo un bot?|Quiero un bot?|quiero un bot|solicitud|solicitó bot|solicito bot|Necesito un bot|necesito un bot$/i.test(m.text) ) {
-conn.reply(m.chat,  `\`⚡¿Quieres un bot para tu grupo?\`
+conn.reply(m.chat,  `\`⚡¿Quieres que JoanBot-TK este en tu grupo?\`
 
 *🐈 Tiene varias opciones. Puedes instalarlo tú mismo siguiendo los pasos de instalación:*
 * #instalarbot
@@ -91,20 +91,20 @@ conn.reply(m.chat,  `\`⚡¿Quieres un bot para tu grupo?\`
 * #serbot (escanea el QR) 
 * #jadibot --code (Código de 8 dígitos)
 
-*💖 Puedes solicitarlo haciendo una donación voluntaria a través de PayPal o Mercado Pago arg.*
+*💖 Si deseas apoyar a que el Bot siga funcioando 24/7 puedes hacer una donación voluntaria a través de PayPal, Yape, Plin, para pagar y mantenter el servidor activo.*
 
-> 🚀 El bot estará activo 24/7 para tu grupo.
+> 🚀 JoanBot-TK esta activo 24/7 para tu grupo.
 
 \`⚡ ¿Por dónde puedo donar?\`
-> A través de nuestro PayPal o Mercado Pago.
+> A través de nuestro PayPal, Plin, Yape.
 
 *❇️PayPal:*
 • https://paypal.me/02JOAN?country.x=PE&locale.x=es_XC
 
 *❇️Mercado pago:*
 
-*• Alias :* OficialGB
-*• CVU :* 0000003100059201491917
+*• Yape a Plin :* 927803866
+*• Plin :* 927803866
 
 \`⏩ Siguiente paso ⏩\`
 
@@ -127,7 +127,7 @@ conn.reply(m.chat, `\`✨ ¿𝐐𝐮𝐞́ 𝐞𝐬 𝐮𝐧 𝐁𝐨𝐭 𝐝�
 🍃 *_Para ver el menú de comandos puedes usar:_*
 #menu
 
-🐈 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨 🐈`, m)}  
+💻 𝑱𝒐𝒂𝒏𝑩𝒐𝒕-𝑻𝑲 💻`, m)}  
 return !0 
 }
 export default handler

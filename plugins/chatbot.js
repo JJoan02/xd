@@ -74,11 +74,11 @@ let teks = `${pickRandom([`no puedo esta contra las política del grupo.😸`, `
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})}*/
 
 if (/^reglas|normas|Reglas$/i.test(m.text) ) { //sin prefijo 
-conn.reply(m.chat, `*╭┅〘 ⚠️ 𝗢𝗯𝗲𝗱𝗲𝗰𝗲 𝗹𝗮𝘀 𝗿𝗲𝗴𝗹𝗮𝘀 ⚠️ 〙*
-➽❌ 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐝𝐨 𝐥𝐥𝐚𝐦𝐚𝐫 𝐚𝐥 𝐁𝐨𝐭
-➽❌ 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐝𝐨 𝐒𝐩𝐚𝐦 𝐚𝐥 𝐁𝐨𝐭
+conn.reply(m.chat, `*╭┅〘 ⚠️ 𝗥𝗲𝗴𝗹𝗮𝘀 𝗱𝗲 𝗝𝗼𝗮𝗻𝗕𝗼𝘁-𝗧𝗞 ⚠️ 〙*
+➽❌ 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐝𝐨 𝐞𝐬𝐜𝐫𝐢𝐛𝐢𝐫 𝐚𝐥 𝐩𝐫𝐢𝐯𝐚𝐝𝐨 𝐚 𝐥𝐨𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 & 𝐁𝐨𝐭
+➽❌ 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐝𝐨 𝐥𝐥𝐚𝐦𝐚𝐝𝐚 𝐠𝐫𝐮𝐩𝐚𝐥 𝐲 𝐚𝐥 𝐁𝐨𝐭
 ➽❌ 𝐍𝐨 𝐚𝐠𝐫𝐞𝐠𝐚𝐫 𝐚𝐥 𝐁𝐨𝐭
-➽❌ 𝐑𝐞𝐬𝐩𝐞𝐭𝐚 𝐥𝐨𝐬 𝐭𝐞𝐫𝐦𝐢𝐧𝐨𝐬 𝐲 𝐜𝐨𝐧𝐝𝐢𝐜𝐢𝐨𝐧𝐞𝐬
+➽❌ 𝐑𝐞𝐬𝐩𝐞𝐭𝐚 𝐥𝐚𝐬 𝐫𝐞𝐠𝐥𝐚𝐬 𝐝𝐞𝐥 𝐠𝐫𝐮𝐩𝐨
 *╰═┅ৡৢ͜͡✦═╡ 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨 ╞═┅ৡৢ͜͡✦═╯*`, fkontak, m)}
 
 if (/^Quiero un bot|como obtengo un bot?|Quiero un bot?|quiero un bot|solicitud|solicitó bot|solicito bot|Necesito un bot|necesito un bot$/i.test(m.text) ) {
@@ -99,7 +99,7 @@ conn.reply(m.chat,  `\`⚡¿Quieres un bot para tu grupo?\`
 > A través de nuestro PayPal o Mercado Pago.
 
 *❇️PayPal:*
-• https://www.paypal.com/paypalme/OficialGD
+• https://paypal.me/02JOAN?country.x=PE&locale.x=es_XC
 
 *❇️Mercado pago:*
 

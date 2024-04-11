@@ -77,28 +77,28 @@ global.imagen12 = fs.readFileSync("./media/menus/img11.jpg")
 global.imagen13 = fs.readFileSync("./media/menus/img12.jpg")
 
 global.img = 'https://telegra.ph/file/dd52a32069189173cc6a6.jpg'
-global.img2 = 'https://i.imgur.com/EXTbyyn.jpg'
+global.img2 = 'https://telegra.ph/file/e55ab867dfdb82decc06e.jpg'
 
 global.img3 = 'https://i.imgur.com/oUAGYc2.jpg' //prem
 global.img4 = 'https://i.imgur.com/i0pccuo.jpg' //prem
 
 global.img5 = 'https://i.imgur.com/iL1snRx.jpeg'
 global.img6 = 'https://telegra.ph/file/fbbcfcae361649ba359dc.jpg'
-global.img7 = 'https://i.imgur.com/JqL3h2V.jpeg'
+global.img7 = 'https://telegra.ph/file/e3632fce546550e128365.jpg'
 global.img8 = 'https://telegra.ph/file/c161fc5861a3964e2781f.jpg'
-global.img9 = 'https://i.imgur.com/xfUEdDb.jpeg'
+global.img9 = 'https://telegra.ph/file/e684ee6c07d4e53297e81.jpg'
 
 global.img10 = 'https://i.imgur.com/DvHoMc3.jpg'
 global.img11 = 'https://i.imgur.com/5Q1MqGD.jpg'
 global.img12 = 'https://i.imgur.com/vWnsjh8.jpg'
 global.img13 = 'https://telegra.ph/file/3793ea1c961d70363b45d.jpg'
-global.img14 = 'https://i.imgur.com/knBDWRA.jpeg'
+global.img14 = 'https://telegra.ph/file/c9c8d37ae5bd30ab83980.jpg'
 global.img15 = 'https://telegra.ph/file/f65fef900eb99a28c51dd.jpg'
 
-global.img16 = 'https://i.imgur.com/11MRjo4.jpeg' //+18
+global.img16 = 'https://telegra.ph/file/e8b42108168cfc8cfe02f.jpg' //+18
 
 global.img17 = 'https://telegra.ph/file/a0f4f35368877e21a9316.jpg'
-global.img18 = 'https://i.imgur.com/9yLH4W4.jpeg'
+global.img18 = 'https://telegra.ph/file/1f61fa8705ed26ad32a11.jpg'
 
 global.logogit = 'https://tinyurl.com/2qvl9vgs'
 

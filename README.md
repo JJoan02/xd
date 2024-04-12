@@ -2,7 +2,7 @@
 > <b>🚀 VERSIÓN 1.0</b>
 
 <p align="center"> 
-<a href="https://github.com/GataNina-Li"><img src="http://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=B1F733&width=435&lines=JoanBot-TK;Disfruta+del+bot.+%E2%9A%A1" height="90px"></a> 
+<a href="https://github.com/KatashiFukushima"><img src="http://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=B1F733&width=435&lines=JoanBot-TK;Disfruta+del+bot.+%E2%9A%A1" height="90px"></a> 
 </p>
 
 <p align="center">

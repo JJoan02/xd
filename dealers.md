@@ -4,6 +4,6 @@
  
 | USUARIO          |   CÓDIGO                | CONTACTO    | ESTADO
 | ------------     | ------------            | ------------| ------------
-| [**Richetti123**](https://github.com/Richetti123)        | `KmZxVE5lIUVvrkqLd8EYJlC9G` | `IG: @richetti_123` | ✅
+| [**KatashiFukushima**](https://github.com/KatashiFukushima)        | `UnAEsTR3ll1taAMiR3P0s1t0rI0` | `IG: @katashi_fukushima` | ✅
 | ⚪        | ⚪               |  ⚪ | ⚪
 

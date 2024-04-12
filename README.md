@@ -38,7 +38,7 @@
 termux-setup-storage
 ```
 ```bash
-apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/KatashiFukushima/KatashiBot-MD/master/katashi.sh | bash
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/JJoan02/JoanBot-TK/master/joan.sh | bash
 ```
 ```js
 // PERSONALIZAR INSTALACIÓN AUTOMÁTICA (En caso de una Bifurcación)

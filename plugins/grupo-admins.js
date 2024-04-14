@@ -13,9 +13,9 @@ let textoA =
 ෆ ${oi}
 *⊱ ──── 《.⋅ ${vs} ⋅.》 ──── ⊰*`
 
-  
 let textoB = 
-`${listAdmin}
+
+  `${listAdmin}
 
 ⛔ ${lenguajeGB.smsAddB4()} ⛔`.trim()
 await conn.sendFile(m.chat, pp, 'error.jpg', textoA + textoB, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })

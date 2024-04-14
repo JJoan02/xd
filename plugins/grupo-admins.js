@@ -13,6 +13,7 @@ let textoA =
 ෆ ${oi}
 *⊱ ──── 《.⋅ ${vs} ⋅.》 ──── ⊰*`
 
+  
 let textoB = 
 `${listAdmin}
 

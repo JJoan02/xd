@@ -14,34 +14,10 @@ let txt = `*\`💫 Te presentamos un nuevo hosting: "Infinity-Wa Host"\`*
 
 > *Te tenemos la mejor opción para mantener activo tu bot 24/7, a precios muy accesibles. Es muy barato y todos pueden comprar.*
 
-*🚩Precios :*
-* 1GB, 100 CPU = 1Dolar
-* 2GB, 120 CPU = 2Dolar
-* 3GB, 140 CPU = 3Dolar
-* 4GB, 175 CPU = 4Dolar
-* 5GB, 200 CPU = 5 Dólar. 
+🟢 ```Información del Host```
 
-🟢 \`\`\`Información del Host\`\`\`
-
-💻 *Página:*
-https://host.panel-infinitywa.store
-
-🧡 *Canal de WhatsApp:*
-https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A
-
-💚 *Grupo:*
+*Grupo Oficial:*
 https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV
-
-🛍️ *Método de pago:*
-*• PayPal :* paypal.me/OfcGB
-*• Mercado pago, alías:* OficialGB
-*• Naranja x, alías:* OficialGL
-*• Yape (Perú) :* +51948705559
-
-*\`💙 Contactanos para más información o alquidir los servicios:\`*
-• https://www.facebook.com/elrebelde21
-• wa.me/527294888993
-• wa.me/5492964650915` 
 
 if (/^infinity|infinityWa|host|hosting$/i.test(m.text)) {
  await conn.sendMessage(m.chat, { text: txt,

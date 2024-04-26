@@ -101,8 +101,6 @@ conn.reply(m.chat,  `\`⚡¿Quieres que JoanBot-TK este en tu grupo?\`
 *❇️PayPal:*
 • https://paypal.me/02JOAN?country.x=PE&locale.x=es_XC
 
-*❇️Mercado pago:*
-
 *• Yape a Plin :* 927803866
 *• Plin :* 927803866
 

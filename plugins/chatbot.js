@@ -110,9 +110,9 @@ conn.reply(m.chat,  `\`⚡¿Quieres que JoanBot-TK este en tu grupo?\`
 
 > Una vez realizado el pago, puedes enviar un comprobante de envío del dinero (captura de pantalla) para que pueda agregar el bot a tu grupo:
 
-• https://chat.whatsapp.com/FDRfhecUGrCEQswkg8FUYz
+• https://chat.whatsapp.com/DaDJTWYHRQY6kx5nkdyDyS
 • ${ig}
-• https://www.facebook.com/elrebelde21
+• https://www.facebook.com/share/Zis4YLHJog5KRg2D/?mibextid=A7sQZp
 
 \`⚡ ¿El bot estará activo 24/7?\`
 _*Sí, nuestro bot está alojado en un servidor de pago para mantenerlo activo 24/7 (por eso también solicitamos donaciones para mantenerlo en funcionamiento) 💞*_

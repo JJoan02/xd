@@ -1405,7 +1405,7 @@ let chat = global.db.data.chats[id] || {}
 let text = ''
 switch (action) {
 case 'add':
-case 'remove':
+//case 'remove':
 if (chat.welcome) {
 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
 for (let user of participants) {

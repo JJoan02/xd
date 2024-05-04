@@ -47,7 +47,7 @@ for (let reward of Object.keys(recompensas)) {
 texto += `+${recompensas[reward]} ${global.rpgshop.emoticon(reward)}\n`}
 
 let gat = `*${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*\n*${minar}*\n*${money} ${global.rpgshop.emoticon('money')}*\n\n🍁 𝗕 𝗢 𝗡 𝗢\n${texto}\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`
-await conn.sendFile(m.chat, pp, 'gata.jpg', gat, fkontak)
+await conn.sendFile(m.chat, pp, 'joan.jpg', gat, fkontak)
 /*conn.sendHydrated(m.chat, `*${premium ? '🎟️ Recompensa Premium' : '🆓 Recompensa Gratis'}*\n*${minar}*\n*${money} ${global.rpgshop.emoticon('money')}*`,`🍁 𝗕 𝗢 𝗡 𝗢\n` + texto + `\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`, pp, md, '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿', null, null, [
 ['𝙈𝙞𝙣𝙖𝙧 𝙀𝙓𝙋 ⚡', `.minar`],
 ['𝙈𝙞𝙣𝙖𝙧 𝘿𝙞𝙖𝙢𝙖𝙣𝙩𝙚𝙨 💎', `.minar3`],
@@ -56,8 +56,8 @@ await conn.sendFile(m.chat, pp, 'gata.jpg', gat, fkontak)
 user.lastcoins = new Date * 1  
 }
 handler.help = ['minar2']
-handler.tags = ['gata']
-handler.command = ['minar2', 'miming2', 'mine2', 'minargatacoins', 'minarcoins', 'minargata'] 
+handler.tags = ['joan']
+handler.command = ['minar2', 'miming2', 'mine2', 'minarjoancoins', 'minarcoins', 'minarjoan'] 
 handler.fail = null
 handler.exp = 0
 export default handler

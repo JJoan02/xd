@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-<img src="https://telegra.ph/file/86afc8b4881e2013cded4.jpg" alt="JoanBot-TK" width="900"/>
+<img src="https://telegra.ph/file/6abaae73efb27d7127781.jpg" alt="JoanBot-TK" width="900"/>
 </p>
 
 <p align="center">

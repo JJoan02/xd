@@ -5,11 +5,11 @@ if (new Date - global.db.data.users[m.sender].lastcofre < 86400000) throw `𝙔�
 let img = 'https://img.freepik.com/vector-gratis/cofre-monedas-oro-piedras-preciosas-cristales-trofeo_107791-7769.jpg?w=2000'
 let dia = Math.floor(Math.random() * 30)
 let tok = Math.floor(Math.random() * 10)
-let gata = Math.floor(Math.random() * 4000)
+let joan = Math.floor(Math.random() * 4000)
 let expp = Math.floor(Math.random() * 5000)
 
   global.db.data.users[m.sender].limit += dia
-  global.db.data.users[m.sender].money += gata
+  global.db.data.users[m.sender].money += joan
   global.db.data.users[m.sender].joincount += tok
   global.db.data.users[m.sender].exp += expp
   
@@ -20,7 +20,7 @@ let texto = `
 ┃ ┈┈┈┈┈┈┈┈┈┈┈┈┈
 ┃⚗️ *${dia} Diamantes* 💎
 ┃⚗️ *${tok} Tokens* 🪙
-┃⚗️ *${gata} GataCoins* 🐈
+┃⚗️ *${joan} JoanCoins* 🥷
 ┃⚗️ *${expp} Exp* ⚡
 ╰━━〔 𓃠 *${vs}* 〕━━⬣`
 
@@ -39,7 +39,7 @@ const fkontak = {
 	"participant": "0@s.whatsapp.net"
 }
 
-await conn.sendFile(m.chat, img, 'gata.jpg', texto, fkontak)
+await conn.sendFile(m.chat, img, 'joan.jpg', texto, fkontak)
 //await conn.sendButton(m.chat, texto, wm, img, [['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu'] ], fkontak, m)  
 global.db.data.users[m.sender].lastcofre = new Date * 1
 }

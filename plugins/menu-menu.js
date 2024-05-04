@@ -115,7 +115,7 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let mentionedJid = [who]
 let username = conn.getName(who)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-let pp = gataVidMenu
+let pp = joanVidMenu
 let pareja = global.db.data.users[m.sender].pasangan 
 const numberToEmoji = { "0": "0️⃣", "1": "1️⃣", "2": "2️⃣", "3": "3️⃣", "4": "4️⃣", "5": "5️⃣", "6": "6️⃣", "7": "7️⃣", "8": "8️⃣", "9": "9️⃣", }
 let lvl = level
@@ -219,7 +219,7 @@ ${generateCommand(commandsReport, usedPrefix)}
 
 ${margen}
 
-> 🪅 *GATABOT TEMPORAL* 🪅\n
+> 🪅 *JOANBOT TEMPORAL* 🪅\n
 ${generateCommand(commandsLink, usedPrefix)}
 
 ${margen}
@@ -500,7 +500,7 @@ ${margen}
 ✓ _${usedPrefix}myns_
 ✓ _${usedPrefix}unreg *numero de serie*_
 ✓ _${usedPrefix}minardiamantes | minargemas_
-✓ _${usedPrefix}minargatacoins | minarcoins_
+✓ _${usedPrefix}minarjoancoins | minarcoins_
 ✓ _${usedPrefix}minarexperiencia | minarexp_
 ✓ _${usedPrefix}minar *:* minar2 *:* minar3_
 ✓ _${usedPrefix}rob | robar 
@@ -528,7 +528,7 @@ ${margen}
 
 ✓ _${usedPrefix}fytendencia | fyranking_
 
-> 🏆 *TOP en GATABOT* 🏆
+> 🏆 *TOP en JOANBOT* 🏆
 
 ✓ _${usedPrefix}top | lb | leaderboard_
 
@@ -571,7 +571,7 @@ ${margen}
 ✓ _${usedPrefix}unete *enlace*_
 ✓ _${usedPrefix}dardiamantes *cantidad*_
 ✓ _${usedPrefix}darxp *cantidad*_
-✓ _${usedPrefix}dargatacoins *cantidad*_
+✓ _${usedPrefix}darjoancoins *cantidad*_
 ✓ _${usedPrefix}addprem | userpremium *@tag* *cantidad*_
 ✓ _${usedPrefix}addprem2 | userpremium2 *@tag* *cantidad*_
 ✓ _${usedPrefix}addprem3 | userpremium3 *@tag* *cantidad*_
@@ -585,7 +585,7 @@ ${margen}
 ✓ _${usedPrefix}comunicargrupos *texto*_
 ✓ _${usedPrefix}borrartmp | cleartmp_
 ✓ _${usedPrefix}delexp *@tag*_
-✓ _${usedPrefix}delgatacoins *@tag*_
+✓ _${usedPrefix}deljoancoins *@tag*_
 ✓ _${usedPrefix}deldiamantes *@tag*_
 ✓ _${usedPrefix}reiniciar | restart_
 ✓ _${usedPrefix}ctualizar | update_
@@ -594,10 +594,10 @@ ${margen}
 ✓ _${usedPrefix}listapremium | listprem_
 ✓ _${usedPrefix}añadirdiamantes *@tag cantidad*_
 ✓ _${usedPrefix}añadirxp *@tag cantidad*_
-✓ _${usedPrefix}añadirgatacoins *@tag cantidad*_
+✓ _${usedPrefix}añadirjoancoins *@tag cantidad*_
 `.trim()
-await conn.sendFile(m.chat, gataImg, 'lp.jpg', menu, fkontak, false, { contextInfo: {mentionedJid, externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: ' 😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', previewType: 0, thumbnail: imagen4, sourceUrl: redesMenu }}})
-//conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, fkontak)
+await conn.sendFile(m.chat, joanImg, 'lp.jpg', menu, fkontak, false, { contextInfo: {mentionedJid, externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: ' 𝗦𝘂𝗽𝗲𝗿 𝗝𝗼𝗮𝗻𝗕𝗼𝘁-𝗧𝗞 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', previewType: 0, thumbnail: imagen4, sourceUrl: redesMenu }}})
+//conn.sendFile(m.chat, joanVidMenu.getRandom(), 'joan.mp4', menu, fkontak)
 } catch (e) {
 await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
@@ -685,12 +685,12 @@ return formattedCommands.join('\n')
 // showPrefix: Usar true para que muestre el prefijo, de lo contrario usar false
 // Si algún objeto no se va usar dejar en false, menos el objeto "comando" ya que si es false no mostrará nada
 const commandsInfo = [
-{ comando: 'cuentasgatabot , accounts', descripcion: false, contexto: 'Cuentas oficiales', showPrefix: true },
+{ comando: 'cuentasjoanbot , accounts', descripcion: false, contexto: 'Cuentas oficiales', showPrefix: true },
 { comando: 'grupos , linkgc', descripcion: false, contexto: 'Grupos oficiales', showPrefix: true },
 { comando: 'donar , donate', descripcion: false, contexto: 'Apoya al proyecto donando', showPrefix: true },
 { comando: 'listagrupos , grouplist', descripcion: false, contexto: 'Grupos en donde estoy', showPrefix: true },
 { comando: 'estado , status', descripcion: false, contexto: 'Información de mí estado', showPrefix: true },
-{ comando: 'infogata , infobot', descripcion: false, contexto: 'Información sobre el Bot', showPrefix: true },
+{ comando: 'infojoan , infobot', descripcion: false, contexto: 'Información sobre el Bot', showPrefix: true },
 { comando: 'instalarbot , installbot', descripcion: false, contexto: 'Información y métodos de instalación', showPrefix: true },
 { comando: 'creadora , owner', descripcion: false, contexto: 'Información sobre mí Creadora', showPrefix: true },
 { comando: 'velocidad , ping', descripcion: false, contexto: 'Verifica la velocidad de este Bot', showPrefix: true },

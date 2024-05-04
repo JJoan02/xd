@@ -30,6 +30,10 @@
 <img src="https://img.shields.io/badge/Redes_Sociales-000000%7D?style=for-the-badge&logo=biolink&logoColor=white">
 </a>
 
+<a href="[https://www.atom.bio/joan_tk02](https://www.tiktok.com/@joan_tk02?_t=8m40svkQCtJ&_r=1)">
+<img src="https://img.shields.io/badge/Tiktok-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">
+</a>
+
 -----
 ### 🌟 (OPCIÓN 1) INSTALACIÓN AUTOMÁTICA POR TERMUX 🫰
 [![blog](https://img.shields.io/badge/Instalacion-Automatica-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/shorts/ZLJYDUM6vSY)
@@ -54,10 +58,10 @@ apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - 
 ```js
 //LÍNEAS A MODIFICAR
 205 --> "git clone https://github.com/[user]/[repositorio].git"
-//Ejemplo: git clone https://github.com/KatashiFukushima/KatashiBot-MD.git
+//Ejemplo: git clone https://github.com/JJoan02/JoanBot-TK.git
 
 209 --> "cd [repositorio]"
-//Ejemplo: cd KatashiBot-MD
+//Ejemplo: cd JoanBot-TK
 
 //Una vez hecho estos cambios ejecute los nuevos comandos en Termux
 ```
@@ -112,7 +116,7 @@ npm start
 * #### APLICACIÓN RECOMENDADA PARA EDITAR [`NÚMERO DE OWNER`](https://play.google.com/store/apps/details?id=com.rhmsoft.code)
 > **Note** Guardar los archivos en la ubicación: storage/downloads/KatashiBot-MD-master/KatashiBot-MD-master   
 ----
-### 🚀 USAR KATASHIBOT 24/7 EN TERMUX 
+### 🚀 USAR JoanBot-TK 24/7 EN TERMUX 
 > Ejecutar estos comandos dentro de la carpeta KatashiBot-MD
 ```bash
 termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
@@ -135,12 +139,12 @@ pm2 stop index
 pm2 start index
 ``` 
 ----
-### 🥷🏻 ACTUALIZAR KATASHIBOT
-> **Note** Comandos para actualizar KatashiBot-MD de forma automática
+### 🥷🏻 ACTUALIZAR JoanBot-TK
+> **Note** Comandos para actualizar JoanBot-TK de forma automática
 ```bash
 grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/KatashiFukushima/KatashiBot-MD/master/update.sh | bash 
 ```
-#### Para que no pierda su progreso en KatashiBot, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
+#### Para que no pierda su progreso en JoanBot-TK, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
 > **Warning** Estos comandos solo funcionan para TERMUX, REPLIT, LINUX                         
 ----
 ### 🟣 ACTIVAR EN HEROKU 

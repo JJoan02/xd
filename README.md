@@ -34,8 +34,8 @@
 <img src="https://img.shields.io/badge/Tiktok-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">
 </a>
 
-DISPONIBLE EN:
-TERMUX, REPLIT, WINDOWS, ZIPPONODES, BOXMINE-HOST
+### DISPONIBLE EN:
+>TERMUX, REPLIT, WINDOWS, ZIPPONODES, BOXMINE-HOST
 
 <a href="[https://f-droid.org/es/packages/com.termux/](https://www.tiktok.com/@joan_tk02?_t=8m40svkQCtJ&_r=1)">
 <img src="https://img.shields.io/badge/Termux-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">

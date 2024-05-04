@@ -100,11 +100,11 @@ let str = `╭━━━[ *𝙉𝙄𝙑𝙀𝙇 | 𝙇𝙀𝙑𝙀𝙇* ]━━�
 ┃ *FECHA:* *${new Date().toLocaleString('id-ID')}*
 ╰━━━〔 *𓃠 ${vs}* 〕━━━━━⬣
 
-*_Cuanto más interactúes con GataBot-MD, mayor será tu nivel!!_*
+*_Cuanto más interactúes con JoanBot-TK, mayor será tu nivel!!_*
 *_Actualiza tú rango con el comando ${usedPrefix}rol!!_*`.trim()
 try {
 const img = await levelup(teks, user.level)
-conn.sendMessage(m.chat, {image: {url: gataImg}, caption: str, mentions: conn.parseMention(str)}, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
+conn.sendMessage(m.chat, {image: {url: joanImg}, caption: str, mentions: conn.parseMention(str)}, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 //conn.sendFile(m.chat, img, 'levelup.jpg', str, m)
 } catch (e) {
 m.reply(str)

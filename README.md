@@ -59,7 +59,7 @@ apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - 
 "wget -O - https://raw.githubusercontent.com/KatashiFukushima/KatashiBot-MD/master/katashi.sh | bash"
 
 // PARÁMETROS QUE PUEDE SER MODIFICADOS --> "[...]"
-"wget -O - https://raw.githubusercontent.com/[usuario]/[repositorio]/[rama]/katashi.sh | bash"
+"wget -O - https://raw.githubusercontent.com/[usuario]/[repositorio]/[rama]/Joan.sh | bash"
 ```
 #### MODIFICAR ARCHIVO [`joan.sh`](https://github.com/JJoan02/JoanBot-TK/blob/main/joan.sh)
 ```js
@@ -88,7 +88,7 @@ apt upgrade
 pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-git clone https://github.com/GataNina-Li/GataBot-MD
+git clone https://github.com/JJoan02/JoanBot-TK.git
 ```
 ```bash
 cd JoanBot-TK

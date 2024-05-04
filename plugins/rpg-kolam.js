@@ -17,7 +17,7 @@ let udang = global.db.data.users[m.sender].udang
 let ikan = global.db.data.users[m.sender].ikan
 let orca = global.db.data.users[m.sender].orca
 //let wm = global.wm 
-let pp = gataMenu.getRandom()
+let pp = joanMenu.getRandom()
 let peces = `🌊🌊 𝗣𝗜𝗦𝗖𝗜𝗡𝗔 𝗗𝗘 𝗣𝗘𝗖𝗘𝗦 🌊🌊
 👤» *${name}*
 

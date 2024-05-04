@@ -36,7 +36,7 @@
 
 ### DISPONIBLE EN:
 >TERMUX, REPLIT, WINDOWS, ZIPPONODES, BOXMINE-HOST
-https://f-droid.org/es/packages/com.termux/
+
 <a href="https://f-droid.org/es/packages/com.termux/">
 <img src="https://img.shields.io/badge/Termux-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">
 </a>

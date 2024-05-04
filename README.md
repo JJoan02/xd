@@ -54,7 +54,7 @@ apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - 
 // PARÁMETROS QUE PUEDE SER MODIFICADOS --> "[...]"
 "wget -O - https://raw.githubusercontent.com/[usuario]/[repositorio]/[rama]/katashi.sh | bash"
 ```
-#### MODIFICAR ARCHIVO [`katashi.sh`](https://github.com/KatashiFukushima/KatashiBot-MD/blob/master/kata.sh)
+#### MODIFICAR ARCHIVO [`joan.sh`](https://github.com/JJoan02/JoanBot-TK/blob/main/joan.sh)
 ```js
 //LÍNEAS A MODIFICAR
 205 --> "git clone https://github.com/[user]/[repositorio].git"

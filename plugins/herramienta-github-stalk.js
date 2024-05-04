@@ -6,7 +6,7 @@ await mensajesEditados(conn, m)
 let request = await githubstalk(text) 
 let { username, following, followers, type, bio, company, blog, location, email, public_repo, public_gists, profile_pic } = request
 let thumb = await (profile_pic)
-let gata = `*⬤── 「 𝙂𝙄𝙏𝙃𝙐𝘽 𝙎𝙏𝘼𝙇𝙆 」 ──⬤*
+let joan = `*⬤── 「 𝙂𝙄𝙏𝙃𝙐𝘽 𝙎𝙏𝘼𝙇𝙆 」 ──⬤*
 ➸ *Usuario*: ${username}
 ➸ *Biografía*: ${bio}
 ➸ *Compañía*: ${company}
@@ -16,7 +16,7 @@ let gata = `*⬤── 「 𝙂𝙄𝙏𝙃𝙐𝘽 𝙎𝙏𝘼𝙇𝙆 」 ─
 ➸ *Siguidores:* ${following}
 ➸ *Blog:* ${blog}
 ➸ *Ubicación:* ${location}`
-await conn.sendFile(m.chat, logogit, 'githubstalk.jpg', gata, m)
+await conn.sendFile(m.chat, logogit, 'githubstalk.jpg', joan, m)
 } catch (e) {
 await conn.sendMessage(m.chat, {text: `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, edit: key})
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)

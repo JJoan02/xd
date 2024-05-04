@@ -91,7 +91,7 @@ pkg install -y git nodejs ffmpeg imagemagick yarn
 git clone https://github.com/GataNina-Li/GataBot-MD
 ```
 ```bash
-cd GataBot-MD
+cd JoanBot-TK
 ```
 ```bash
 yarn install

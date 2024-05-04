@@ -36,8 +36,8 @@ let text = `╭━━🕐━🕑━🕒━━⬣
 ┃ ${texto}
 ╰━━🕕━🕔━🕓━━⬣\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`
 let pp = 'https://telegra.ph/file/aea15921a50814cf331ae.jpg'
-conn.sendMessage(m.chat, {image: {url: gataImg}, caption: text, mentions: conn.parseMention(text)}, {quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
-//await conn.sendFile(m.chat, gata, 'gata.jpg', text, fkontak)
+conn.sendMessage(m.chat, {image: {url: joanImg}, caption: text, mentions: conn.parseMention(text)}, {quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
+//await conn.sendFile(m.chat, joan, 'joan.jpg', text, fkontak)
 //await conn.sendButton(m.chat, text, texto + `\n\n🎟️ 𝗣 𝗥 𝗘 𝗠 𝗜 𝗨 𝗠 ⇢ ${premium ? '✅' : '❌'}\n${wm}`, img5, [['🎁 𝙍𝙀𝙂𝘼𝙇𝙊 | 𝘾𝙇𝘼𝙄𝙈 🎁', '/claim'], ['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu']], m, dos.getRandom())  
 user.lasthourly = new Date * 1
 }

@@ -221,7 +221,7 @@ const item = (args[0] || '').toLowerCase()
 const total = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
 let premium = user.premium
 
-if (!listItems[item]) return conn.sendFile(m.chat, image, 'gata.jpg', footer, fkontak)
+if (!listItems[item]) return conn.sendFile(m.chat, image, 'joan.jpg', footer, fkontak)
 //conn.sendButton(m.chat, text, footer, image, buttons, m)
 if (command.toLowerCase() == 'buy') {
 let paymentMethod = Object.keys(listItems[item]).find(v => v in user)

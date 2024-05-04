@@ -30,8 +30,8 @@
 <img src="https://img.shields.io/badge/Redes_Sociales-000000%7D?style=for-the-badge&logo=biolink&logoColor=white">
 </a>
 
-<a href="[https://www.atom.bio/joan_tk02](https://www.tiktok.com/@joan_tk02?_t=8m40svkQCtJ&_r=1)">
-<img src="https://img.shields.io/badge/Tiktok-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">
+<a href="https://www.tiktok.com/@joan_tk02?_t=8m4xgSwigNB&_r=1">
+<img src="https://img.shields.io/badge/Tíktok-000000%7D?style=for-the-badge&logo=biolink&logoColor=white">
 </a>
 
 ### DISPONIBLE EN:

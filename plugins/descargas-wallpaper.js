@@ -1,6 +1,6 @@
 import { wallpaper } from '@bochilteam/scraper'
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `${lenguajeGB['smsAvisoMG']()}}${mid.smsMalused7}\n${usedPrefix + command} Gata | cat`
+if (!text) throw `${lenguajeGB['smsAvisoMG']()}}${mid.smsMalused7}\n${usedPrefix + command} joan | joan`
 try {
 const res = await (/2/.test(command) ? wallpaperv2 : wallpaper)(text)
 const img = res[Math.floor(Math.random() * res.length)]

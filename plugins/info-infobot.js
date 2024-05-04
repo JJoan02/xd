@@ -40,11 +40,11 @@ const cpu = cpus.reduce((last, cpu, _, { length }) => {
   })
 const { restrict } = global.db.data.settings[conn.user.jid] || {}
 const { autoread } = global.opts
-let pp = gataImg
+let pp = joanImg
 //let grupos = [nna, nn, nnn, nnntt]
-//let gata = [img5, img6, img7, img8, img9]
-//let enlace = { contextInfo: { externalAdReply: {title: wm + ' ', body: 'support group' , sourceUrl: accountsgb, thumbnail: await(await fetch(gataMenu)).buffer() }}}
-//let enlace2 = { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: '', title: wm, body: md, thumbnailUrl: await(await fetch(gataMenu)).buffer(), sourceUrl: accountsgb }}}
+//let joan = [img5, img6, img7, img8, img9]
+//let enlace = { contextInfo: { externalAdReply: {title: wm + ' ', body: 'support group' , sourceUrl: accountsgb, thumbnail: await(await fetch(joanMenu)).buffer() }}}
+//let enlace2 = { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: '', title: wm, body: md, thumbnailUrl: await(await fetch(joanMenu)).buffer(), sourceUrl: accountsgb }}}
 //let dos = [enlace, enlace2]
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let old = performance.now()
@@ -54,8 +54,8 @@ let old = performance.now()
   let speed = neww - old
 
 let info = `╭━━━━[ ${gt} ]━━━━━⬣
-┃➥ *CREADORA | CREATOR*
-┃ღ *𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨*
+┃➥ *CREADOR | CREATOR*
+┃ღ *𝙅𝙤𝙖𝙣-𝙏𝙆*
 ┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 ┃➥ *CONTACTO | CONTACT* 
 ┃ღ *${ig}*
@@ -94,13 +94,13 @@ let info = `╭━━━━[ ${gt} ]━━━━━⬣
 ┃ღ ${restrict ? '*Activado ✔*' : '*Desactivado ✘*'} 
 ┃
 ╰━━━[ 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙘𝙞ó𝙣 | 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 ]━━⬣`
-await conn.sendFile(m.chat, gataImg, 'lp.jpg', info, fkontak, false, { contextInfo: {externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: ' 😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', previewType: 0, thumbnail: gataImg, sourceUrl: accountsgb }}}) 
-//conn.sendFile(m.chat, pp, 'gata.mp4', info, fkontak)
+await conn.sendFile(m.chat, joanImg, 'lp.jpg', info, fkontak, false, { contextInfo: {externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: gt, body: '𝗦𝘂𝗽𝗲𝗿 𝗝𝗼𝗮𝗻𝗕𝗼𝘁-𝗧𝗞 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', previewType: 0, thumbnail: joanImg, sourceUrl: accountsgb }}}) 
+//conn.sendFile(m.chat, pp, 'joan.mp4', info, fkontak)
 /*let info = `
 ╭━━━━[ ${gt} ]━━━━━⬣
 ┃
-┃➥ *CREADORA | CREATOR*
-┃ღ *𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨*
+┃➥ *CREADOR | CREATOR*
+┃ღ *𝗦𝘂𝗽𝗲𝗿 𝗝𝗼𝗮𝗻𝗕𝗼𝘁-𝗧𝗞*
 ┃┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 ┃➥ *CONTACTO | CONTACT* 
 ┃ღ *${ig}*
@@ -143,7 +143,7 @@ await conn.sendFile(m.chat, gataImg, 'lp.jpg', info, fkontak, false, { contextIn
 ┃
 ╰━━━[ 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙘𝙞ó𝙣 | 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙩𝙞𝙤𝙣 ]━━⬣`.trim()
 
-conn.sendHydrated(m.chat, info, wm, pp, 'https://github.com/GataNina-Li/GataBot-MD', '𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿', null, null, [
+conn.sendHydrated(m.chat, info, wm, pp, 'https://github.com/JJoan02/JoanBot-TK', '𝙅𝙤𝙖𝙣𝘽𝙤𝙩-𝙏𝙆', null, null, [
 ['𝙑𝙚𝙧 𝙂𝙧𝙪𝙥𝙤𝙨 | 𝙎𝙚𝙚 𝙂𝙧𝙤𝙪𝙥𝙨', '#grupolista'],
 ['𝘾𝙪𝙚𝙣𝙩𝙖𝙨 𝙊𝙛𝙞𝙘𝙞𝙖𝙡𝙚𝙨 | 𝘼𝙘𝙘𝙤𝙪𝙣𝙩𝙨', '/cuentasgb'],
 ['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪', '.menu']
@@ -152,7 +152,7 @@ conn.sendHydrated(m.chat, info, wm, pp, 'https://github.com/GataNina-Li/GataBot-
 }
 handler.help = ['infobot']
 handler.tags = ['info', 'tools']
-handler.command = /^(infobot|informacionbot|infogata|informacióngata|informaciongata)$/i
+handler.command = /^(infobot|informacionbot|infojoan|informaciónjoan|informacionjoan)$/i
 export default handler
 
 function clockString(ms) {

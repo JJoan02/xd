@@ -34,6 +34,11 @@
 <img src="https://img.shields.io/badge/Tiktok-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">
 </a>
 
+<a href="[https://f-droid.org/es/packages/com.termux/](https://www.tiktok.com/@joan_tk02?_t=8m40svkQCtJ&_r=1)">
+<img src="https://img.shields.io/badge/Termux-000000%7D?style=for-the-badge&logo=biolink&logoColor=black">
+</a>
+
+
 -----
 ### 🌟 (OPCIÓN 1) INSTALACIÓN AUTOMÁTICA POR TERMUX 🫰
 [![blog](https://img.shields.io/badge/Instalacion-Automatica-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/shorts/ZLJYDUM6vSY)

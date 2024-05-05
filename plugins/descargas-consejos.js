@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 import axios from "axios"
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-//let frep = { contextInfo: { externalAdReply: {title: wm, body: author, sourceUrl: redesMenu.getRandom(), thumbnail: await(await fetch(gataMenu.getRandom())).buffer() }}}
+//let frep = { contextInfo: { externalAdReply: {title: wm, body: author, sourceUrl: redesMenu.getRandom(), thumbnail: await(await fetch(joanMenu.getRandom())).buffer() }}}
 try { 
 if (command == 'consejo' || command == 'advice') { 
 let img = 'https://img.freepik.com/vector-premium/caracter-gato-ilustracion-hoja-trebol_75474-1263.jpg'
@@ -21,7 +21,7 @@ conn.sendFile(m.chat, img, 'error.png', texto.trim(), fkontak)}
   
 if (command == 'frase2' || command == 'phrase2') { 
 let img = 'https://superpet.pe/blog/wp-content/uploads/2022/05/nombres-para-gatos-blancos.jpg'  
-let list = (await axios.get(`https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/src/JSON/frase2.json`)).data  
+let list = (await axios.get(`https://raw.githubusercontent.com/JJoan02/JoanBot-TK/master/src/JSON/frase2.json`)).data  
 let contenido = await list[Math.floor(list.length * Math.random())]
 let frase = contenido.motivasi
 let frase2 = await translate(`${frase}`, { to: lenguajeGB.lenguaje(), autoCorrect: true })

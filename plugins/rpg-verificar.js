@@ -125,7 +125,7 @@ ${user.premLimit === 1 ? '' : `🎟️ *PREMIUM*
                 title: wm,
                 body: '🌟 Registro completado con éxito',
                 thumbnailUrl: pp,
-                sourceUrl: 'https://www.atom.bio/katashifukushima/',
+                sourceUrl: 'https://www.atom.bio/joan_tk02/',
                 mediaType: 1,
                 showAdAttribution: true,
                 renderLargerThumbnail: true

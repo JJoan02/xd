@@ -57,55 +57,58 @@ if (command == 'verificar' || command == 'verify' || command == 'register' || co
     await conn.reply(m.chat, `*👀 ¿CÓMO DESEA REGISTRARSE?*\n\n📑 **REGISTRO RÁPIDO**\n\nPara registrarse rápidamente, escriba:\n\`${usedPrefix}reg1 nombre edad\`\n\n📝 Asegúrese de dejar un espacio entre el nombre y la edad.\n\n🗂️ **REGISTRO COMPLETO**\n• Insignia de verificación\n• Desbloquear comandos que requieran registro\n• Premium Temporal Gratis\n• Más opciones disponibles\n\nPara registrarse completamente, escriba:\n\`${usedPrefix}nombre\`\n\n\`\`\`⭐ Tendrá un tiempo limitado para completar el registro\`\`\``, fkontak, m)
 }
 
+
 if (command == 'reg1') {
-registrando = true
-if (registrando === true) {
-intervalId = setInterval(mensajeRegistro, 2 * 60 * 1000) //2 min
-setTimeout(() => {
-clearInterval(intervalId)}, 126000) //2.1 min
-}
+    registrando = true;
+    if (registrando === true) {
+        intervalId = setInterval(mensajeRegistro, 2 * 60 * 1000); // 2 min
+        setTimeout(() => {
+            clearInterval(intervalId);
+        }, 126000); // 2.1 min
+    }
 
-registro = text.replace(/\s+/g, usedPrefix) 
-_registro = text.split(" ",2)
-if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}👉 *PARÁMETROS DEL REGISTRO:*\n${usedPrefix + command} nombre edad\n\n\`\`\`EJEMPLO:\`\`\`\n${usedPrefix + command} ${gt} 20\n\n*✨ CONSEJO:*\n• _Su nombre no debe de contener números_\n• _La edad no debe de contener letras_\n\n⭐ *Si desea personalizar más su registro, escriba:*\n${usedPrefix}nombre`, fkontak, m)
-//if (_registro['length'] >= 3 || isNaN(_registro[1])) return 
-//conn.sendButton(m.chat, fg + '🙃 *ESTÁ INTENTANDO SEPARAR SU NOMBRE O UNIR TODO?* ', '🧐 *COINCIDE COMO EN ESTOS EJEMPLOS:*\n' + `\`\`\`${usedPrefix + command} Super${gt}20\`\`\`` + '\n' + `\`\`\`${usedPrefix + command} Super 15 ${gt} \`\`\`` + '\n' + `\`\`\`${usedPrefix + command} Super ${gt} 24 De ${author}\`\`\`\n\n` + '*Si cumple que tenga (Nombre/Frase y Edad) Autocompletaremos su Registro, de lo contraio vuelva a registrarse*\n➘ _Use el Botón de abajo_', null, [[`🌟 AUTOCOMPLETAR MI REGISTRO`, usedPrefix + 'reg1' + ' ' + text.replace(/[♧◇♡♤■□●○•°☆▪︎¤¿?¡¬¦±×÷°µ§©®™¶€¢£¥₽₹₩₱₸₪₫₮₦₴₡₭₲₼₿.,\/#!$%\^&\*;:{}@=\-_`~()\s\0-9]/gi, "") + ' ' + text.replace(/[♧◇♡♤■□●○•°☆▪︎¤¿?¡¬¦±×÷°µ§©®™¶€¢£¥₽₹₩₱₸₪₫₮₦₴₡₭₲₼₿.,\/#!$%\^&\*;:{}@=\-_`~()\s\a-z]/gi, "")], ['📑 VOLVER A REGISTRAR', command + usedPrefix]], m)
-if (!_registro[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU NOMBRE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[0].length >= 30) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY LARGO, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[0].length <= 2) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY CORTO O FALTANTE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-_registro[0] = text.replace(/\s+/g, '').replace(/[0-9]+/gi, "")
-user.name = _registro[0]
+    registro = text.replace(/\s+/g, usedPrefix);
+    _registro = text.split(" ", 2);
+    if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}👉 *PARÁMETROS DEL REGISTRO:*\n${usedPrefix + command} nombre edad\n\n\`\`\`EJEMPLO:\`\`\`\n${usedPrefix + command} ${gt} 20\n\n*✨ CONSEJO:*\n• _Su nombre no debe de contener números_\n• _La edad no debe de contener letras_`, fkontak, m);
+    if (!_registro[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU NOMBRE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
+    if (_registro[0].length >= 30) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY LARGO, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
+    if (_registro[0].length <= 2) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY CORTO O FALTANTE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
 
-if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU EDAD, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-user.age = parseInt(_registro[1]) //_registro[1]	
-global.db.data.users[m.sender]['registroR'] = true
+    _registro[0] = text.replace(/\s+/g, '').replace(/[0-9]+/gi, "");
+    user.name = _registro[0];
+    
+    if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU EDAD, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
+    if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
+    if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
+    user.age = parseInt(_registro[1]);
 
-let registroRapido = ` *░ 📑 REGISTRO ACTUAL 📑 ░*
- *∷∷∷∷∷∷∷∷∷∷∷∷∷∷∷*
-┊ *✓ NOMBRE*
-┊ ⁘ ${user.name === 0 ? sinDefinir : user.name}
-┊
-┊ *✓ EDAD*
-┊ ⁘ ${user.age === 0 ? sinDefinir : user.age + ' años'}
-╰┈┈┈┈┈┈┈┈┈┈┈┈•
+    global.db.data.users[m.sender]['registroR'] = true;
 
-❇️ \`\`\`Para finalizar su registro escriba:\`\`\`
-✪ *${usedPrefix}finalizar*`
+    let registroRapido = ` *░ 📑 REGISTRO COMPLETADO 📑 ░*
+     *∷∷∷∷∷∷∷∷∷∷∷∷∷∷∷*
+    ┊ *✓ NOMBRE*
+    ┊ ⁘ ${user.name}
+    ┊
+    ┊ *✓ EDAD*
+    ┊ ⁘ ${user.age} años
+    ╰┈┈┈┈┈┈┈┈┈┈┈┈•
 
-await conn.sendMessage(m.chat, {
-text: registroRapido,
-contextInfo: {
-externalAdReply: {
-title: wm,
-body: '🌟 Puede modificar su registro antes de finalizar',
-thumbnailUrl: pp, 
-sourceUrl: 'https://www.atom.bio/katashifukushima/',
-mediaType: 1,
-showAdAttribution: true,
-renderLargerThumbnail: true
-}}}, { quoted: fkontak })
+    🌟 *¡Gracias por registrarse!*`;
+
+    await conn.sendMessage(m.chat, {
+        text: registroRapido,
+        contextInfo: {
+            externalAdReply: {
+                title: wm,
+                body: '🌟 Registro completado con éxito',
+                thumbnailUrl: pp,
+                sourceUrl: 'https://www.atom.bio/katashifukushima/',
+                mediaType: 1,
+                showAdAttribution: true,
+                renderLargerThumbnail: true
+            }
+        }
+    }, { quoted: fkontak });
 }
 
 if (command == 'nombre' || command == 'name') {

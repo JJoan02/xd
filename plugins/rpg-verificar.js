@@ -57,46 +57,69 @@ if (command == 'verificar' || command == 'verify' || command == 'register' || co
     await conn.reply(m.chat, `*👀 ¿CÓMO DESEA REGISTRARSE?*\n\n📑 **REGISTRO RÁPIDO**\n\nPara registrarse rápidamente, escriba:\n\`${usedPrefix}reg1 nombre edad\`\n\n📝 Asegúrese de dejar un espacio entre el nombre y la edad.\n\n🗂️ **REGISTRO COMPLETO**\n• Insignia de verificación\n• Desbloquear comandos que requieran registro\n• Premium Temporal Gratis\n• Más opciones disponibles\n\nPara registrarse completamente, escriba:\n\`${usedPrefix}nombre\`\n\n\`\`\`⭐ Tendrá un tiempo limitado para completar el registro\`\`\``, fkontak, m)
 }
 
-
 if (command == 'reg1') {
-    registrando = true;
+    registrando = true
     if (registrando === true) {
-        intervalId = setInterval(mensajeRegistro, 2 * 60 * 1000); // 2 min
+        intervalId = setInterval(mensajeRegistro, 2 * 60 * 1000) // 2 min
         setTimeout(() => {
-            clearInterval(intervalId);
-        }, 126000); // 2.1 min
+            clearInterval(intervalId)
+        }, 126000) // 2.1 min
     }
 
-    registro = text.replace(/\s+/g, usedPrefix);
-    _registro = text.split(" ", 2);
-    if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}👉 *PARÁMETROS DEL REGISTRO:*\n${usedPrefix + command} nombre edad\n\n\`\`\`EJEMPLO:\`\`\`\n${usedPrefix + command} ${gt} 20\n\n*✨ CONSEJO:*\n• _Su nombre no debe de contener números_\n• _La edad no debe de contener letras_`, fkontak, m);
-    if (!_registro[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU NOMBRE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
-    if (_registro[0].length >= 30) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY LARGO, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
-    if (_registro[0].length <= 2) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY CORTO O FALTANTE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
+    registro = text.replace(/\s+/g, usedPrefix)
+    _registro = text.split(" ", 2)
+    if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}👉 *PARÁMETROS DEL REGISTRO:*\n${usedPrefix + command} nombre edad\n\n\`\`\`EJEMPLO:\`\`\`\n${usedPrefix + command} ${gt} 20\n\n*✨ CONSEJO:*\n• _Su nombre no debe de contener números_\n• _La edad no debe de contener letras_\n\n⭐ *Si desea personalizar más su registro, escriba:*\n${usedPrefix}nombre`, fkontak, m)
 
-    _registro[0] = text.replace(/\s+/g, '').replace(/[0-9]+/gi, "");
-    user.name = _registro[0];
-    
-    if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU EDAD, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
-    if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
-    if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m);
-    user.age = parseInt(_registro[1]);
+    if (!_registro[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU NOMBRE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+    if (_registro[0].length >= 30) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY LARGO, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+    if (_registro[0].length <= 2) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY CORTO O FALTANTE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+    _registro[0] = text.replace(/\s+/g, '').replace(/[0-9]+/gi, "")
+    user.name = _registro[0]
 
-    global.db.data.users[m.sender]['registroR'] = true;
+    if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU EDAD, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+    if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+    if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+    user.age = parseInt(_registro[1])
 
-    let registroRapido = ` *░ 📑 REGISTRO COMPLETADO 📑 ░*
-     *∷∷∷∷∷∷∷∷∷∷∷∷∷∷∷*
-    ┊ *✓ NOMBRE*
-    ┊ ⁘ ${user.name}
-    ┊
-    ┊ *✓ EDAD*
-    ┊ ⁘ ${user.age} años
-    ╰┈┈┈┈┈┈┈┈┈┈┈┈•
+    // Marcar al usuario como registrado
+    user.registered = true
+    user.registroC = false  // Registro rápido
+    user.tiempo = new Date().toLocaleString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+    let sn = Math.random().toString(36).substr(2, 6) // Generar código de registro aleatorio
+    user.sn = sn
+    user.descripcion = 'Sin descripción' // Valor por defecto si no hay descripción
+    user.genero = 'No especificado' // Valor por defecto
+    user.identidad = 'No especificado' // Valor por defecto
+    user.pasatiempo = 'No especificado' // Valor por defecto
 
-    🌟 *¡Gracias por registrarse!*`;
+    let registroCompleto = `
+😼 *REGISTRADO POR*
+❱❱ ${wm}\n
+📑 *TIPO DE REGISTRO* 
+❱❱ ${user.registroC === true ? 'REGISTRO COMPLETO' : 'REGISTRO RÁPIDO'}\n
+⌛ *FECHA/HORA*
+❱❱ ${user.tiempo}\n
+🛅 *CÓDIGO DE REGISTRO*
+❱❱ ${sn}\n
+✅ *INSIGNIA DE VERIFICACIÓN*
+❱❱   *${user.registered === true ? 'ͧͧͧͦꙶͣͤ✓ᚲᵀᴷ' : ''}*\n
+✨ *NOMBRE* 
+❱❱ ${user.name}\n
+👀 *DESCRIPCIÓN*
+❱❱ ${user.descripcion}\n
+🔢 *EDAD* 
+❱❱ ${user.age}\n
+${user.registroC === true ? `☘️ *GÉNERO*
+❱❱ ${user.genero}\n
+🌱 *ORIENTACIÓN SEXUAL*
+❱❱ ${user.identidad}\n
+❇️ *PASATIEMPO(S)*
+❱❱ ${user.pasatiempo}\n
+${user.premLimit === 1 ? '' : `🎟️ *PREMIUM*
+❱❱ ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 HORAS || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n🌟 *Si es su primera vez registrándose, recibirá horas premium de forma gratuita como bonificación exclusiva por su primera inscripción, puede cancelar y eliminar su registro en cualquier momento. Gracias por registrarse ✨*` : ''}`.trim()
 
     await conn.sendMessage(m.chat, {
-        text: registroRapido,
+        text: registroCompleto,
         contextInfo: {
             externalAdReply: {
                 title: wm,
@@ -108,7 +131,7 @@ if (command == 'reg1') {
                 renderLargerThumbnail: true
             }
         }
-    }, { quoted: fkontak });
+    }, { quoted: fkontak })
 }
 
 if (command == 'nombre' || command == 'name') {

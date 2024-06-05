@@ -1,5 +1,10 @@
 import ws from 'ws';
 
+// Asegúrate de inicializar global.conns en algún lugar de tu aplicación principal
+if (!global.conns) {
+  global.conns = [];
+}
+
 async function handler(m, { conn: _envio, usedPrefix }) {
   // Verificar si global.conns está definida
   if (!global.conns) {

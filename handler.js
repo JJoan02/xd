@@ -1,23 +1,20 @@
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys';
-import { smsg } from './lib/simple.js'
-import { format } from 'util'
-import { fileURLToPath } from 'url'
-import path, { join } from 'path'
-import { unwatchFile, watchFile } from 'fs'
-import chalk from 'chalk'   
-import fetch from 'node-fetch'
-import './plugins/_content.js'
- 
-/**
- * @type {import('@adiwajshing/baileys')}  
- */
-const isNumber = x => typeof x === 'number' && !isNaN(x)
-const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
-clearTimeout(this)
-resolve()
-}, ms))
+import { smsg } from './lib/simple.js';
+import { format } from 'util';
+import { fileURLToPath } from 'url';
+import path, { join } from 'path';
+import { unwatchFile, watchFile } from 'fs';
+import chalk from 'chalk';
+import fetch from 'node-fetch';
+import './plugins/_content.js';
 
-// Resto del código sigue igual...
+/**
+ * @type {import('@adiwajshing/baileys')}
+ */
+const isNumber = x => typeof x === 'number' && !isNaN(x);
+const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(() => {
+    resolve();
+}, ms));
 
 /**
  * Handle messages upsert

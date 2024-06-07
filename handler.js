@@ -1,4 +1,4 @@
-import {generateWAMessageFromContent} from '@whiskeysockets/baileys';
+import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys';
 import { smsg } from './lib/simple.js'
 import { format } from 'util'
 import { fileURLToPath } from 'url'
@@ -11,7 +11,7 @@ import './plugins/_content.js'
 /**
  * @type {import('@adiwajshing/baileys')}  
  */
-import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys';
+// Eliminé la importación redundante aquí
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
 clearTimeout(this)

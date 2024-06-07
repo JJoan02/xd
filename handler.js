@@ -79,7 +79,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.bibitpisang)) user.bibitpisang = 0;
                 if (!isNumber(user.emas)) user.emas = 0;
                 if (!isNumber(user.jeruk)) user.jeruk = 0;
-                if (!isNumber(user.kayu)) user.kayu = 0;
+		if (!isNumber(user.kayu)) user.kayu = 0;
                 if (!isNumber(user.makanan)) user.makanan = 0;
                 if (!isNumber(user.mangga)) user.mangga = 0;
                 if (!isNumber(user.pisang)) user.pisang = 0;

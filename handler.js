@@ -25,22 +25,21 @@ resolve()
 export async function handler(chatUpdate) {
 this.msgqueque = this.msgqueque || [];
 this.uptime = this.uptime || Date.now();
-if (!chatUpdate) {
-return;
+if (!chatUpdate || !chatUpdate.messages) {
+    return;
 }
 this.pushMessage(chatUpdate.messages).catch(console.error);
 let m = chatUpdate.messages[chatUpdate.messages.length - 1];
 if (!m) {
-return;
+    return;
 }
-if (global.db.data == null) await global.loadDatabase()
-/*------------------------------------------------*/	     
-if (global.chatgpt.data === null) await global.loadChatgptDB()
+if (global.db.data == null) await global.loadDatabase();
+/*------------------------------------------------*/	    
+if (global.chatgpt.data == null) await global.loadChatgptDB();
 /*------------------------------------------------*/	
 try {
-m = smsg(this, m) || m
-if (!m)
-return
+    m = smsg(this, m) || m;
+    if (!m) return;
 m.exp = 0
 m.limit = false
 m.money = false

@@ -18,42 +18,37 @@ const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(() => {
 
 /**
  * Handle messages upsert
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['messages.upsert']} groupsUpdate 
+ * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['messages.upsert']} chatUpdate 
  */
 export async function handler(chatUpdate) {
-this.msgqueque = this.msgqueque || [];
-this.uptime = this.uptime || Date.now();
-if (!chatUpdate || !chatUpdate.messages) {
-    return;
-}
-this.pushMessage(chatUpdate.messages).catch(console.error);
-let m = chatUpdate.messages[chatUpdate.messages.length - 1];
-if (!m) {
-    return;
-}
-if (global.db.data == null) await global.loadDatabase();
-/*------------------------------------------------*/	    
-if (global.chatgpt.data == null) await global.loadChatgptDB();
-/*------------------------------------------------*/	
-try {
-    m = smsg(this, m) || m;
-    if (!m) return;
-m.exp = 0
-m.limit = false
-m.money = false
-try {
-// TODO: use loop to insert data instead of this
-let user = global.db.data.users[m.sender]
-/*------------------------------------------------*/	            
-let chatgptUser = global.chatgpt.data.users[m.sender];
-if (typeof chatgptUser !== "object")
-global.chatgpt.data.users[m.sender] = [];		
-/*------------------------------------------------*/
-if (typeof user !== 'object')
-global.db.data.users[m.sender] = {}
-if (user) {
-if (!isNumber(user.exp)) user.exp = 0
-if (!('premium' in user)) user.premium = false
+    this.msgqueque = this.msgqueque || [];
+    this.uptime = this.uptime || Date.now();
+    if (!chatUpdate || !chatUpdate.messages) {
+        return;
+    }
+    this.pushMessage(chatUpdate.messages).catch(console.error);
+    let m = chatUpdate.messages[chatUpdate.messages.length - 1];
+    if (!m) {
+        return;
+    }
+    if (global.db.data == null) await global.loadDatabase();
+    if (global.chatgpt.data == null) await global.loadChatgptDB();
+    try {
+        m = smsg(this, m) || m;
+        if (!m) return;
+        m.exp = 0;
+        m.limit = false;
+        m.money = false;
+        // Inicialización de usuario
+        let user = global.db.data.users[m.sender];
+        let chatgptUser = global.chatgpt.data.users[m.sender];
+        if (typeof chatgptUser !== "object") global.chatgpt.data.users[m.sender] = [];
+        if (typeof user !== 'object') global.db.data.users[m.sender] = {};
+        // Lógica adicional para inicializar los atributos del usuario
+        if (user) {
+            if (!isNumber(user.exp)) user.exp = 0;
+            if (!('premium' in user)) user.premium = false;
+            // Añadir más inicializaciones aquí si es necesario
 if (!('muto' in user)) user.muto = false
 if (!isNumber(user.joincount)) user.joincount = 1
 if (!isNumber(user.money)) user.money = 150

@@ -138,26 +138,17 @@ if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) 
     do {
         let lineM = '━━━━━━━━━━━━━━━━━━━━━━━━';
         opcion = await question(`
-        ${chalk.bold.cyan('╔══════════════════════════════════════════╗')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.bold.cyan('║                ')}${chalk.bold.magenta('JOANBOT-TK')}${chalk.bold.cyan('                ║')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.bold.cyan('╠══════════════════════════════════════════╣')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.bold.cyan('║     ')}${chalk.bold.yellow('Vincula tu cuenta de WhatsApp')}${chalk.bold.cyan('     ║')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.bold.cyan('╠══════════════════════════════════════════╣')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.greenBright.bold('║          1. Método QR                    ║')}
-        ${chalk.redBright.bold('║          2. Código de 8 dígitos          ║')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.bold.cyan('╠══════════════════════════════════════════╣')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.italic.yellowBright('║          Seleccione un método            ║')}
-        ${chalk.bold.cyan('║                                          ║')}
-        ${chalk.bold.cyan('╚══════════════════════════════════════════╝')}
-        ${lineM}
-        ${chalk.bold.magentaBright('---> ')}`);
+${chalk.bold.cyan('                JOANBOT-TK                ')}
+${chalk.bold.yellow('------------------------------------------')}
+${chalk.bold.white('        Vincula tu cuenta de WhatsApp     ')}
+${chalk.bold.yellow('------------------------------------------')}
+${chalk.greenBright.bold('          1. Método QR                    ')}
+${chalk.redBright.bold('          2. Código de 8 dígitos          ')}
+${chalk.bold.yellow('------------------------------------------')}
+${chalk.italic.yellowBright('          Seleccione un método            ')}
+${chalk.bold.yellow('------------------------------------------')}
+${lineM}
+${chalk.bold.magentaBright('---> ')}`);
         if (!/^[1-2]$/.test(opcion)) {
             console.log(chalk.bold.redBright('Opción no válida. Intente nuevamente.'));
         }

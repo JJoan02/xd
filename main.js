@@ -132,6 +132,9 @@ resolver(respuesta.trim())
 
 const chalkRainbow = require('chalk-rainbow');
 
+import chalk from 'chalk';
+import chalkRainbow from 'chalk-rainbow';
+
 let opcion;
 if (methodCodeQR) {
     opcion = '1';

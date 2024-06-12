@@ -130,6 +130,8 @@ resolver(respuesta.trim())
 })})
 }
 
+const chalkRainbow = require('chalk-rainbow');
+
 let opcion;
 if (methodCodeQR) {
     opcion = '1';
@@ -138,7 +140,7 @@ if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) 
     do {
         let lineM = '━━━━━━━━━━━━━━━━━━━━━━━━';
         opcion = await question(`
-${chalk.bold.cyan('                JOANBOT-TK                ')}
+${chalkRainbow.bold('                    JOANBOT-TK                    ')}
 ${chalk.bold.yellow('------------------------------------------')}
 ${chalk.bold.white('        Vincula tu cuenta de WhatsApp     ')}
 ${chalk.bold.yellow('------------------------------------------')}

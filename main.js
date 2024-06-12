@@ -136,17 +136,24 @@ if (methodCodeQR) {
 }
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./${authFile}/creds.json`)) {
     do {
-        let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》';
+        let lineM = '━━━━━━━━━━━━━━━━━━━━━━━━';
         opcion = await question(`
-        ${chalk.cyan('╭━━━━━[ SYSTEM INIT ]━━━━━╮')}
-        ${chalk.cyan('┃ ')}          ${chalk.bold.yellowBright('Ingrese el número de WhatsApp:')}
-        ${chalk.cyan('┃ ')}
-        ${chalk.cyan('┃ ')}  ${chalk.bold.greenBright('1. Método QR')}
-        ${chalk.cyan('┃ ')}  ${chalk.bold.redBright('2. Código de 8 dígitos')}
-        ${chalk.cyan('┃ ')}
-        ${chalk.cyan('┃ ')}       ${chalk.italic.magenta('Seleccione un método')}
-        ${chalk.cyan('╰━━━━━[ SELECT OPTION ]━━━━━╯')}
-        ${lineM}\n${chalk.bold.magentaBright('---> ')}`);
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃           ${chalk.cyan.bold('SYSTEM INIT')}            ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}            ┃
+┃  ${chalk.blueBright('┊')} ${chalk.blue.bgBlue.bold.cyan('Ingrese el número de WhatsApp:')}┃
+┃  ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}            ┃
+┃  ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}            ┃
+┃  ${chalk.blueBright('┊')} ${chalk.green.bgMagenta.bold.yellow('1. Método QR')}            ┃
+┃  ${chalk.blueBright('┊')} ${chalk.bold.redBright('2. Código de 8 dígitos')}         ┃
+┃  ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}            ┃
+┃  ${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}            ┃
+┃  ${chalk.blueBright('┊')} ${chalk.italic.magenta('Seleccione un método')}          ┃
+┃  ${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+${lineM}
+${chalk.bold.magentaBright('---> ')}`);
         if (!/^[1-2]$/.test(opcion)) {
             console.log(chalk.bold.redBright('Opción no válida. Intente nuevamente.'));
         }

@@ -15,10 +15,15 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
     user = global.db.data.users[m.sender]
     bot = global.db.data.settings[this.user.jid] || {}
 
+    // Obtener lista de owners y oficiales
+    const owners = global.owner || []
+    const officials = global.official || []
+    const isAuthorized = owners.includes(m.sender) || officials.includes(m.sender)
+
     // Verificar si el antiPrivate está activo
     if (bot.antiPrivate) {
-        // Si el mensaje es privado y no es de un owner, verificar si es un comando permitido
-        if (!m.isGroup && !isOwner && !isROwner) {
+        // Si el mensaje es privado y no es de un owner o un oficial, verificar si es un comando permitido
+        if (!m.isGroup && !isAuthorized) {
             if (!regex.test(m.text.toLowerCase().trim())) {
                 // Si el comando no está permitido, ignorar el mensaje
                 return !0
@@ -27,7 +32,7 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
     }
     
     // Lógica adicional de manejo de mensajes privados sin bloquear a ningún contacto
-    if (!m.isGroup && !isOwner && !isROwner) {
+    if (!m.isGroup && !isAuthorized) {
         if (user.counterPrivate === 0) {
             await conn.reply(m.chat, mid.smsprivado(m), m, { mentions: [m.sender] })  
         } else if (user.counterPrivate === 1) {

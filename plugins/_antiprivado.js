@@ -9,21 +9,25 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
     // Crear una expresión regular para los comandos permitidos
     const regex = new RegExp(`^${comandos.source}$`, 'i')
     
-    // Si el mensaje es privado y no es de un owner, verificar si es un comando permitido
-    if (!m.isGroup && !isOwner && !isROwner) {
-        if (!regex.test(m.text.toLowerCase().trim())) {
-            // Si el comando no está permitido, ignorar el mensaje
-            return !0
-        }
-    }
-    
-    // Código para manejo de antiPrivate
-    let chat, user, bot, mensaje
+    // Obtener datos del usuario, chat y bot
+    let chat, user, bot
     chat = global.db.data.chats[m.chat]
     user = global.db.data.users[m.sender]
     bot = global.db.data.settings[this.user.jid] || {}
 
-    if (bot.antiPrivate && !isOwner && !isROwner) {
+    // Verificar si el antiPrivate está activo
+    if (bot.antiPrivate) {
+        // Si el mensaje es privado y no es de un owner, verificar si es un comando permitido
+        if (!m.isGroup && !isOwner && !isROwner) {
+            if (!regex.test(m.text.toLowerCase().trim())) {
+                // Si el comando no está permitido, ignorar el mensaje
+                return !0
+            }
+        }
+    }
+    
+    // Lógica adicional de manejo de mensajes privados sin bloquear a ningún contacto
+    if (!m.isGroup && !isOwner && !isROwner) {
         if (user.counterPrivate === 0) {
             await conn.reply(m.chat, mid.smsprivado(m), m, { mentions: [m.sender] })  
         } else if (user.counterPrivate === 1) {
@@ -31,8 +35,6 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
             await conn.reply(m.chat, mid.smsprivado1(m, grupos), m, { mentions: [m.sender] }) 
         } else if (user.counterPrivate === 2) {
             await conn.reply(m.chat, mid.smsprivado2(m), m, { mentions: [m.sender] }) 
-            user.counterPrivate = -1
-            await this.updateBlockStatus(m.sender, 'block')
         }
         user.counterPrivate++
     }

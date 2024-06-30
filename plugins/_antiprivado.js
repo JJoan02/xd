@@ -1,10 +1,10 @@
 const comandosPermitidos = /piedra|papel|tijera|estado|verificar|code|jadibot --code|--code|creadora|bottemporal|grupos|instalarbot|términos|bots|deletebot|eliminarsesion|serbot|verify|register|registrar|reg|reg1|nombre|name|nombre2|name2|edad|age|edad2|age2|genero|género|gender|identidad|pasatiempo|hobby|identify|finalizar|pas2|pas3|pas4|pas5|registroc|deletesesion|registror|jadibot/i
 
 let handler = m => m
-handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, usedPrefix, command }) {
-    if (m.isBaileys && m.fromMe) return !0 // Ignorar mensajes del propio bot
-    if (m.isGroup) return !1 // Ignorar mensajes en grupos
-    if (!m.message) return !0 // Ignorar mensajes sin contenido
+handler.before = async function (m, { conn, isOwner, isROwner }) {
+    if (m.fromMe) return !0 // Ignorar mensajes enviados por el propio bot
+    if (m.isGroup) return !1 // Ignorar mensajes enviados en grupos
+    if (!m.message) return !0 // Ignorar mensajes que no contienen texto
 
     // Crear una expresión regular para los comandos permitidos
     const regex = new RegExp(`^${comandosPermitidos.source}$`, 'i')
@@ -31,18 +31,6 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
         }
     }
     
-    // Lógica adicional de manejo de mensajes privados sin bloquear a ningún contacto
-    if (!m.isGroup && !isAuthorized) {
-        if (user.counterPrivate === 0) {
-            await conn.reply(m.chat, mid.smsprivado(m), m, { mentions: [m.sender] })  
-        } else if (user.counterPrivate === 1) {
-            let grupos = redesMenu
-            await conn.reply(m.chat, mid.smsprivado1(m, grupos), m, { mentions: [m.sender] }) 
-        } else if (user.counterPrivate === 2) {
-            await conn.reply(m.chat, mid.smsprivado2(m), m, { mentions: [m.sender] }) 
-        }
-        user.counterPrivate++
-    }
-    return !1
-}
+    return !1 // No bloquear ni enviar advertencias, simplemente ignorar
+} 
 export default handler

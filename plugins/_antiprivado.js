@@ -1,4 +1,4 @@
-const comandos = /piedra|papel|tijera|estado|verificar|code|jadibot --code|--code|creadora|bottemporal|grupos|instalarbot|términos|bots|deletebot|eliminarsesion|serbot|verify|register|registrar|reg|reg1|nombre|name|nombre2|name2|edad|age|edad2|age2|genero|género|gender|identidad|pasatiempo|hobby|identify|finalizar|pas2|pas3|pas4|pas5|registroc|deletesesion|registror|jadibot/i
+const comandosPermitidos = /piedra|papel|tijera|estado|verificar|code|jadibot --code|--code|creadora|bottemporal|grupos|instalarbot|términos|bots|deletebot|eliminarsesion|serbot|verify|register|registrar|reg|reg1|nombre|name|nombre2|name2|edad|age|edad2|age2|genero|género|gender|identidad|pasatiempo|hobby|identify|finalizar|pas2|pas3|pas4|pas5|registroc|deletesesion|registror|jadibot/i
 
 let handler = m => m
 handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, usedPrefix, command }) {
@@ -7,7 +7,7 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
     if (!m.message) return !0 // Ignorar mensajes sin contenido
 
     // Crear una expresión regular para los comandos permitidos
-    const regex = new RegExp(`^${comandos.source}$`, 'i')
+    const regex = new RegExp(`^${comandosPermitidos.source}$`, 'i')
     
     // Obtener datos del usuario, chat y bot
     let chat, user, bot

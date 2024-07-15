@@ -108,7 +108,23 @@ const smsLista35 = () => { return `💎 MENÚ PARA PROPIETARIO(A) 💎`}
 
 //main.js
 const smsWelcome = (subject, user, desc) => {
-    return `¡Hola, @user ! 👋🏻\n\n*⊢❥︎ Bienvenid@ a ✨ @subject ✨*\n\n### \`\`\`🎉 ¡Estamos encantados de tenerte aquí! 🎉\`\`\`\n_Para conocerte mejor, te invitamos a presentarte (opcional):_\n\n📝 **Nombre**\n🎂 **Edad**\n🌍 **País**\n📸 **Foto**\n\n---\n\n💖 **¡Gracias y bienvenid@ nuevamente!** 🚀\n\n*⊢⊰────⊶⊰≪• ❈ •≫⊱⊷────⊱⊣*\n\n*Por favor, lee la descripción del grupo para conocer nuestras reglas y objetivos.*\n${String.fromCharCode(8206).repeat(850)}\n@desc`;
+    return `*⊢❥︎ Bienvenid@ @user ! 👋🏻*
+
+Al grupo *✨ @subject ✨*
+
+\`\`\`🎉 ¡Estamos encantados de tenerte aquí! 🎉\`\`\`
+_Para conocerte mejor, te invitamos a presentarte_
+_📝 Nombre, edad, foto y país (opcional):_
+
+---
+
+💖 **¡Gracias y bienvenid@ nuevamente!** 🚀
+
+*⊢⊰────⊶⊰≪• ❈ •≫⊱⊷────⊱⊣*
+
+*Por favor, lee la descripción del grupo para conocer nuestras reglas y objetivos.*
+${String.fromCharCode(8206).repeat(850)}
+@desc`;
 }
 const smsBye = () => { return '*╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⊰*\n┊ @user\n┊ *NO LE SABE AL GRUPO, CHAO!!* 😎\n*╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⊰*'}
 const smsSpromote = () => { return '*@user 𝘼𝙃𝙊𝙍𝘼 𝙀𝙎 𝘼𝘿𝙈𝙄𝙉 𝙀𝙉 𝙀𝙎𝙏𝙀 𝙂𝙍𝙐𝙋𝙊!!*'}

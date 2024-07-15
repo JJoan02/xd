@@ -428,8 +428,8 @@ break
 default:
 if (!/[01]/.test(command)) return await conn.reply(m.chat, `\`${lenguajeGB.smsConfi10()}\`\n\n🌟 ${lenguajeGB.smsConfi2()} *@${toUser}*
 
-> ${lenguajeGB.smsConfi3()}
-> ${lenguajeGB.smsConfi4()}
+${lenguajeGB.smsConfi3()}
+${lenguajeGB.smsConfi4()}
 
 ${lenguajeGB.smsConfi5()}
 ${lenguajeGB.smsConfi6()}

